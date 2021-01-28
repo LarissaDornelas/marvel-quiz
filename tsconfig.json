@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
+    "baseUrl": "src",
     "module": "esnext",
     "jsx": "preserve",
     "lib": ["dom", "es2017"],
