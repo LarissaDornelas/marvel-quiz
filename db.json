@@ -1,3 +1,26 @@
 {
-    "bg":""
+    "questions": [
+        {
+          "image": "https://media.giphy.com/media/j5P0DQIOf4PonLi55G/giphy.gif",
+          "title": "Qual a diferença entre = , == e === ?",
+          "description": "Pergunta fácil em!",
+          "answer": 1,
+          "alternatives": [
+            "São a mesma coisa",
+            "O = significa atribuição de valor. Já == verifica a igualdade do valor, enquanto === verifica valor e tipo de variável."
+          ]
+        },
+        {
+          "image": "https://media.giphy.com/media/j5P0DQIOf4PonLi55G/giphy.gif",
+          "title": "lorem ipisu-dfioshdfhosagwfgag sdvasdf",
+          "description": "Pergunta fácil em!!!!!",
+          "answer": 1,
+          "alternatives": [
+            "São a mesma coiaaassa",
+            "O = significa atribuição de valor. Já == verifica a igualdade do valor, enquanto === verifica valor e tipo dedfgdsf variável.",
+            "São a mesma coasdasdisa",
+            "O = significa atribuição de valor. Já == verifica a igualdade do valor, enquanto === verifica valor e tipo de variável."
+          ]
+        }
+      ]
 }

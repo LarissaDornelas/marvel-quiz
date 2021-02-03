@@ -14,7 +14,13 @@ const GlobalStyle = createGlobalStyle`
       background-color: #282342;
   
     }
-    html, body {
+    @media (max-width: 500px) {
+      body {
+    background-image: linear-gradient(to top, #282342 10%, #282342 100%);
+}
+    }
+    
+      html, body {
       min-height: 100vh;
     }
     #__next {

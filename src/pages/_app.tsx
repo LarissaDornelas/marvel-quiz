@@ -2,6 +2,7 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle, theme } from "styles";
+import { Container } from "styles/common";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
@@ -15,7 +16,9 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Component {...pageProps} />
+        <Container>
+          <Component {...pageProps} />
+        </Container>
       </ThemeProvider>
     </>
   );
