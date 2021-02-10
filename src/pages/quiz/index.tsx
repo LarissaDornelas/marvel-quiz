@@ -1,27 +1,33 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { Content, QuizContainer } from "styles/common";
-import { AnswerButton, ConfirmButton, QuestionImage } from "styles/quiz";
+import {
+  AnswerButton,
+  ConfirmButton,
+  QuestionImage,
+  ResultContainer,
+} from "styles/quiz";
+import { Result } from "types";
 import db from "../../../db.json";
 
 export default function Quiz() {
-  enum Result {
-    SUCCESSFUL,
-    ERROR,
-  }
-
   const router = useRouter();
 
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [rightAnswers, setRightAnswers] = useState<number>(0);
-  const [questionResult, setQuestionResult] = useState<Result | null>(null);
+  const [questionResult, setQuestionResult] = useState<Result | null>(
+    Result.ERROR
+  );
+  const [loadingNextQueston, setLoadingNextQuestion] = useState<boolean>(false);
 
   const { alternatives, answer, description, image, title } = db.questions[
     currentQuestion
   ];
 
   function handleConfirmQuestion() {
+    setLoadingNextQuestion(true);
+
     if (answer === selectedAnswer) {
       setRightAnswers(rightAnswers + 1);
       setQuestionResult(Result.SUCCESSFUL);
@@ -34,6 +40,7 @@ export default function Quiz() {
         : setCurrentQuestion(currentQuestion + 1);
       setQuestionResult(null);
       setSelectedAnswer(null);
+      setLoadingNextQuestion(false);
     }, 1000);
   }
 
@@ -51,12 +58,17 @@ export default function Quiz() {
             key={index}
             selected={index === selectedAnswer}
             onClick={() => setSelectedAnswer(index)}
+            disabled={loadingNextQueston}
           >
             {item}
           </AnswerButton>
         ))}
-        {questionResult === Result.SUCCESSFUL && <h1>OK!</h1>}
-        {questionResult === Result.ERROR && <h1>aff!</h1>}
+        <ResultContainer>
+          {questionResult === Result.SUCCESSFUL && <h1>OK!</h1>}
+          {questionResult === Result.ERROR && (
+            <ResultContainer.ResultIcon value={Result.ERROR} />
+          )}
+        </ResultContainer>
         {questionResult === null && (
           <ConfirmButton onClick={handleConfirmQuestion}>Confirm</ConfirmButton>
         )}

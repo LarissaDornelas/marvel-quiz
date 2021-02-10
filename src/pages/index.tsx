@@ -5,15 +5,23 @@ import { QuizContainer, Content } from "styles/common";
 
 export default function Home() {
   const [name, setName] = useState("");
+  const [validationError, setValidationError] = useState(false);
   const router = useRouter();
 
   function handleChange(event: React.FormEvent<HTMLInputElement>) {
+    if (validationError) setValidationError(false);
+
     setName(event.currentTarget.value);
   }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    router.push(`/quiz?name=${name}`);
+    if (name === "") {
+      setValidationError(true);
+    } else {
+      setValidationError(false);
+      router.push(`/quiz?name=${name}`);
+    }
   }
 
   return (
@@ -28,7 +36,15 @@ export default function Home() {
           <br /> Let's see...
         </p>
         <Form onSubmit={handleSubmit}>
-          <Form.Input placeholder="Name" onChange={handleChange} value={name} />
+          <Form.Input
+            placeholder="Name"
+            onChange={handleChange}
+            value={name}
+            error={validationError}
+          />
+          {validationError && (
+            <Form.ErrorMessage>Campo Obrigatório</Form.ErrorMessage>
+          )}
           <Form.Button type="submit">play</Form.Button>
         </Form>
       </Content>
