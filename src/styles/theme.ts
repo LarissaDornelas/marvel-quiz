@@ -5,6 +5,8 @@ const theme = {
     dark: "#3A426D",
     darkVariation: "#E91E63",
     lightVariation: "#f46e8d",
+    successful: "#3BB54A",
+    error: "#E04F5F",
   },
 };
 

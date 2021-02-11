@@ -6,6 +6,7 @@ import {
   ConfirmButton,
   QuestionImage,
   ResultContainer,
+  LoadingAnimation,
 } from "styles/quiz";
 import { Result } from "types";
 import db from "../../../db.json";
@@ -16,9 +17,7 @@ export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [rightAnswers, setRightAnswers] = useState<number>(0);
-  const [questionResult, setQuestionResult] = useState<Result | null>(
-    Result.ERROR
-  );
+  const [questionResult, setQuestionResult] = useState<Result | null>(null);
   const [loadingNextQueston, setLoadingNextQuestion] = useState<boolean>(false);
 
   const { alternatives, answer, description, image, title } = db.questions[
@@ -41,7 +40,7 @@ export default function Quiz() {
       setQuestionResult(null);
       setSelectedAnswer(null);
       setLoadingNextQuestion(false);
-    }, 1000);
+    }, 2000);
   }
 
   return (
@@ -57,21 +56,23 @@ export default function Quiz() {
           <AnswerButton
             key={index}
             selected={index === selectedAnswer}
-            onClick={() => setSelectedAnswer(index)}
+            result={questionResult}
             disabled={loadingNextQueston}
+            onClick={() => setSelectedAnswer(index)}
           >
             {item}
           </AnswerButton>
         ))}
         <ResultContainer>
-          {questionResult === Result.SUCCESSFUL && <h1>OK!</h1>}
-          {questionResult === Result.ERROR && (
-            <ResultContainer.ResultIcon value={Result.ERROR} />
+          {questionResult !== null && (
+            <ResultContainer.ResultIcon value={questionResult} />
           )}
         </ResultContainer>
         {questionResult === null && (
           <ConfirmButton onClick={handleConfirmQuestion}>Confirm</ConfirmButton>
         )}
+
+        {loadingNextQueston && <LoadingAnimation value={questionResult} />}
       </Content>
     </QuizContainer>
   );
