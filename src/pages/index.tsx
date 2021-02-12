@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <QuizContainer>
-      <img src="/img/logo.png" />
+      <h1>Logo</h1>
       <Content>
         <Content.Header>
           <h1>Marvel Studios</h1>
