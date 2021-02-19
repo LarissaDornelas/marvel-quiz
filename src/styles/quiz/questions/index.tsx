@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { theme } from "styles/theme";
-import { Result } from "types";
+import { Result } from "contexts/QuizContext/types";
 
 const handleQuestionBackground = (result: Result | null) => {
   switch (result) {
@@ -54,19 +54,21 @@ ResultContainer.ResultIcon = styled.div<{ value: Result }>`
   margin: 16px;
 `;
 
-const ConfirmButton = styled.button`
-  background-color: ${theme.colors.darkVariation};
+const ConfirmButton = styled.button<{ disabled: boolean }>`
+  background-color: ${({ disabled }) =>
+    disabled ? "#9e9e9e" : theme.colors.darkVariation};
   border-radius: 4px;
   height: 35px;
   margin: 0 20px 20px 20px;
   text-transform: uppercase;
   border: none;
   color: #fff;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   outline: none;
 
   &:hover {
-    background-color: ${theme.colors.lightVariation};
+    background-color: ${({ disabled }) =>
+      disabled ? "#9e9e9e" : theme.colors.lightVariation};
   }
 `;
 

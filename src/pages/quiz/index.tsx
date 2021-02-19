@@ -10,6 +10,7 @@ export default function Quiz() {
       <QuizContext.Consumer>
         {({ showResult }) => (
           <QuizContainer>
+            <h1>Logo</h1>
             {!showResult ? <Questions /> : <Result />}
           </QuizContainer>
         )}

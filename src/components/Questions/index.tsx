@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 
 import { QuizContext } from "contexts/QuizContext";
 import db from "../../../db.json";
@@ -10,7 +10,7 @@ import {
   ConfirmButton,
   AnswerButton,
   QuestionImage,
-} from "styles/quiz";
+} from "styles/quiz/questions";
 
 const Questions: React.FC = () => {
   const {
@@ -51,7 +51,12 @@ const Questions: React.FC = () => {
         )}
       </ResultContainer>
       {questionResult === null && (
-        <ConfirmButton onClick={handleConfirmQuestion}>Confirm</ConfirmButton>
+        <ConfirmButton
+          disabled={selectedAnswer === null}
+          onClick={handleConfirmQuestion}
+        >
+          Confirm
+        </ConfirmButton>
       )}
 
       {loadingNextQueston && <LoadingAnimation value={questionResult} />}

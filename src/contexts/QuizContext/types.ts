@@ -12,5 +12,6 @@ export interface IQuizContext {
   selectedAnswer: number | null;
   showResult: boolean;
   setSelectedAnswer: Dispatch<SetStateAction<number | null>>;
+  rightAnswers: number;
   handleConfirmQuestion: () => void;
 }

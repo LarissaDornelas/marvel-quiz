@@ -1,5 +1,4 @@
 import React, { createContext, useState } from "react";
-import { useRouter } from "next/router";
 import db from "../../../db.json";
 
 import { IQuizContext, Result } from "./types";
@@ -7,8 +6,6 @@ import { IQuizContext, Result } from "./types";
 const QuizContext = createContext({} as IQuizContext);
 
 const QuizProvider: React.FC = ({ children }) => {
-  const router = useRouter();
-
   const [questionResult, setQuestionResult] = useState<Result | null>(null);
   const [loadingNextQueston, setLoadingNextQuestion] = useState<boolean>(false);
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
@@ -46,6 +43,7 @@ const QuizProvider: React.FC = ({ children }) => {
         selectedAnswer,
         setSelectedAnswer,
         showResult,
+        rightAnswers,
       }}
     >
       {children}
