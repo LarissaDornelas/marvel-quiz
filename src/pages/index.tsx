@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { Form } from "styles/home";
+import { Form, Logo } from "styles/home";
 import { QuizContainer, Content } from "styles/common";
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <QuizContainer>
-      <h1>Logo</h1>
+      <Logo />
       <Content>
         <Content.Header>
           <h1>Marvel Studios</h1>
@@ -48,14 +48,6 @@ export default function Home() {
           <Form.Button type="submit">play</Form.Button>
         </Form>
       </Content>
-      <Content>
-        <h1>Score</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      </Content>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
-        dolor sit amet consectetur adipisicing elit.
-      </p>
     </QuizContainer>
   );
 }

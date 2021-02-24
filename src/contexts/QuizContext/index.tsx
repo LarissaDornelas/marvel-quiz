@@ -1,4 +1,7 @@
+import { useRouter } from "next/router";
 import React, { createContext, useState } from "react";
+import { api } from "services/api";
+import colorGenerator from "util/colorGenerator";
 import db from "../../../db.json";
 
 import { IQuizContext, Result } from "./types";
@@ -15,19 +18,38 @@ const QuizProvider: React.FC = ({ children }) => {
 
   const { answer } = db.questions[currentQuestion];
 
+  const router = useRouter();
+
+  async function handleResult(points: number) {
+    setShowResult(true);
+    const { name } = router.query;
+
+    const color = colorGenerator();
+
+    const data = {
+      name,
+      color,
+      points,
+    };
+
+    await api.post("/players", data);
+  }
+
   function handleConfirmQuestion() {
     setLoadingNextQuestion(true);
+    let newRightAnswers = rightAnswers;
 
     if (answer === selectedAnswer) {
-      setRightAnswers(rightAnswers + 1);
+      newRightAnswers += 1;
+      setRightAnswers(newRightAnswers);
       setQuestionResult(Result.SUCCESSFUL);
     } else {
       setQuestionResult(Result.ERROR);
     }
     setTimeout(() => {
-      currentQuestion === db.questions.length - 1
-        ? setShowResult(true)
-        : setCurrentQuestion(currentQuestion + 1);
+      if (currentQuestion === db.questions.length - 1)
+        handleResult(newRightAnswers * 10);
+      else setCurrentQuestion(currentQuestion + 1);
       setQuestionResult(null);
       setSelectedAnswer(null);
       setLoadingNextQuestion(false);

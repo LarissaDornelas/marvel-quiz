@@ -1,26 +1,162 @@
 {
-    "questions": [
-        {
-          "image": "https://media.giphy.com/media/j5P0DQIOf4PonLi55G/giphy.gif",
-          "title": "Qual a diferença entre = , == e === ?",
-          "description": "Pergunta fácil em!",
-          "answer": 1,
-          "alternatives": [
-            "São a mesma coisa",
-            "O = significa atribuição de valor. Já == verifica a igualdade do valor, enquanto === verifica valor e tipo de variável."
-          ]
-        },
-        {
-          "image": "https://media.giphy.com/media/j5P0DQIOf4PonLi55G/giphy.gif",
-          "title": "lorem ipisu-dfioshdfhosagwfgag sdvasdf",
-          "description": "Pergunta fácil em!!!!!",
-          "answer": 1,
-          "alternatives": [
-            "São a mesma coiaaassa",
-            "O = significa atribuição de valor. Já == verifica a igualdade do valor, enquanto === verifica valor e tipo dedfgdsf variável.",
-            "São a mesma coasdasdisa",
-            "O = significa atribuição de valor. Já == verifica a igualdade do valor, enquanto === verifica valor e tipo de variável."
-          ]
-        }
+  "questions": [
+    {
+      "image": "https://observatoriodocinema.uol.com.br/wp-content/uploads/2020/06/Captain-America.jpg",
+      "title": "Who made Captain America’s shield?",
+      "description": "",
+      "answer": 0,
+      "alternatives": [
+        "Howard Stark",
+        "Tony Stark",
+        "Bety Ross",
+        "Michael Keaton"
       ]
+    },
+    {
+      "image": "https://www.denofgeek.com/wp-content/uploads/2018/03/avengers-age-of-ultron-best-marvel-movie.jpg?resize=768%2C432",
+      "title": "Unlike the comics, who created Ultron in Avengers: Age of Ultron?",
+      "description": "",
+      "answer": 3,
+      "alternatives": [
+        "Natasha Romanoff",
+        "Vormir",
+        "Karen Gillan",
+        "Tony Stark/Iron Man (In the comics, it was Hank Pym)"
+      ]
+    },
+    {
+      "image": "https://ahaslides.com/wp-content/uploads/2020/07/5cf569025b8385b838d8459097070777.gif",
+      "title": "What year was the first Iron Man movie released, kicking off the Marvel Cinematic Universe?",
+      "description": "",
+      "answer": 1,
+      "alternatives": [
+        "2005",
+        "2008",
+        "2010",
+        "2012"
+      ]
+    },
+    {
+      "image": "https://observatoriodocinema.uol.com.br/wp-content/uploads/2019/08/Chris-Hemsworth-Thor.jpg",
+      "title": "What is the name of Thor’s hammer?",
+      "description": "",
+      "answer": 1,
+      "alternatives": [
+        "Vanir",
+        "Mjolnir",
+        "Aesir",
+        "Norn"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/xFBnkMvpTM6m4/giphy.gif",
+      "title": "In the Incredible Hulk, what does Tony tell Thaddeus Ross at the end of the film?",
+      "description": "",
+      "answer": 2,
+      "alternatives": [
+        "That he wants to study The Hulk",
+        "That he knows about S.H.I.E.L.D.",
+        "That they are putting a team together",
+        "That Thaddeus owes him money"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/k4EpQLLFV6byo/source.gif",
+      "title": "The Flerkens are a race of extremely dangerous aliens that resembles what?",
+      "description": "",
+      "answer": 0,
+      "alternatives": [
+        "Cats",
+        "Ducks",
+        "Reptiles",
+        "Raccoons"
+      ]
+    },
+    {
+      "image": "https://pyxis.nymag.com/v1/imgs/3d4/0aa/89125115b0e10b94e3378d484712450727-25-thanos.rsocial.w1200.jpg",
+      "title": "Who was the last holder of the Space Stone before Thanos claims it for his Infinity Gauntlet?",
+      "description": "",
+      "answer": 0,
+      "alternatives": [
+        "Thor",
+        "Loki",
+        "The Collector",
+        "Tony Stark"
+      ]
+    },
+    {
+      "image": "https://ahaslides.com/wp-content/uploads/2020/07/maxresdefault-1.jpg",
+      "title": "What does Thor want another of when he’s in the diner?",
+      "description": "",
+      "answer": 3,
+      "alternatives": [
+        "A slice of pie",
+        "A pint of beer",
+        "A stack of pancakes",
+        "A cup of coffee"
+      ]
+    },
+    {
+      "image": "https://ahaslides.com/wp-content/uploads/2020/07/source-1.gif",
+      "title": "What were the three items Rocket claims he needs in order to escape the prison?",
+      "description": "",
+      "answer": 1,
+      "alternatives": [
+        "A security card, a fork, and an ankle monitor",
+        "A security band, a battery, and a prosthetic leg",
+        "A pair of binoculars, a detonator, and a prosthetic leg",
+        "A knife, cable wires, and Peter’s mixtape"
+      ]
+    },
+    {
+      "image": "https://ahaslides.com/wp-content/uploads/2020/07/groot.gif",
+      "title": "What song does Baby Groot dance to at the end of the first Guardian of the Galaxy?",
+      "description": "",
+      "answer": 2,
+      "alternatives": [
+        "‘Cherry Bomb’ – The Runaways",
+        "‘Ain’t No Mountain High Enough’ – Marvin Gaye & Tammi Terrell",
+        "‘I Want You Back’ – The Jackson 5",
+        "‘Hooked On A Feeling’ – Voidoid"
+      ]
+    }
+  ],
+  "players": [
+    {
+      "name": "Lari",
+      "color": "#DCE7F7",
+      "points": 70,
+      "id": 1
+    },
+    {
+      "name": "Mike",
+      "color": "#59DBFA",
+      "points": 20,
+      "id": 2
+    },
+    {
+      "name": "Luke",
+      "color": "#FFD628",
+      "points": 80,
+      "id": 3
+    },
+    {
+      "name": "Tracy",
+      "color": "#B1D457",
+      "points": 20,
+      "id": 4
+    },
+    {
+      "name": "Raphael",
+      "color": "#3DFFA4",
+      "points": 20,
+      "id": 5
+    },
+    {
+      "name": "Scott",
+      "color": "#B1D457",
+      "points": 100,
+      "id": 5
+    }
+  ]
 }

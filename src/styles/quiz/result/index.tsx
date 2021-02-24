@@ -23,12 +23,11 @@ const FinalResult: any = styled.div`
   justify-content: center;
 `;
 
-FinalResult.Title = styled.h1<{ result: number }>`
+FinalResult.Title = styled.h1<{ result: string }>`
   padding: 15px;
   font-size: 1.25rem !important;
   span {
-    color: ${({ result }) =>
-      result <= 50 ? theme.colors.error : theme.colors.successful};
+    color: ${({ result }) => (result ? result : theme.colors.error)};
   }
 `;
 
@@ -83,7 +82,7 @@ const RackingItemContent = styled.div`
   }
 `;
 
-const RackingItemIcon = styled.div`
+const RackingItemIcon = styled.div<{ color?: string }>`
   display: flex;
   position: absolute;
   height: 30px;
@@ -96,7 +95,7 @@ const RackingItemIcon = styled.div`
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  background-color: burlywood;
+  background-color: ${({ color }) => (color ? color : "burlywood")};
 `;
 
 export {

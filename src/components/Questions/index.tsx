@@ -29,7 +29,9 @@ const Questions: React.FC = () => {
   return (
     <Content>
       <Content.Header>
-        <h1>Question {currentQuestion + 1} of 10</h1>
+        <h1>
+          Question {currentQuestion + 1} of {db.questions.length}
+        </h1>
       </Content.Header>
       <QuestionImage src={image} />
       <h1>{title}</h1>
