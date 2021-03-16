@@ -1,28 +1,59 @@
-# TypeScript & Styled Components Next.js example
+<h1 align="center">
+  <br>
+<img src="./public/img/logo-with-background.png" alt="Marvel Quiz" width="200"/>
+  <br>
+  Marvel Quiz
+  <br>
+</h1>
 
-This is a really simple project that show the usage of Next.js with TypeScript and Styled Components.
+<h4 align="center">A quiz for lovers of Marvel</h4>
 
-## Deploy your own
+<p align="center">
+  <a href="#tecnologies">Tecnologies</a> •
+  <a href="#how-to-run">How To Run</a>
+</p>
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+<div align="center">
+  <br>
+  <img src="./public/img/screen-shoot-home.png" alt="Marvel quiz demo" width="1000"></a>
+  <img src="./public/img/screen-shoot-result.png" alt="Marvel quiz demo" width="1000"></a>
+  <img src="./public/img/screen-shoot.png" alt="Marvel quiz demo" width="1000"></a>
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript-styled-components&project-name=with-typescript-styled-components&repository-name=with-typescript-styled-components)
+</div>
 
-## How to use it?
+## Tecnologies
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+- NextJS
+- Styled Components
+- Json Server
+
+## How To Run
+
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```bash
-npx create-next-app --example with-typescript-styled-components with-typescript-styled-components-app
-# or
-yarn create next-app --example with-typescript-styled-components with-typescript-styled-components-app
+# Clone this repository
+$ git clone https://github.com/LarissaDornelas/marvel-quiz
+
+# Go into the repository
+$ cd marvel-quiz
+
+# Install dependencies
+$ npm install
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+After following all the steps you can start the server with this command line:
 
-## Notes
+```bash
 
-This is an amalgamation of the 2 existing examples:
+$ npm start:server
+```
 
-- [with-typescript](https://github.com/vercel/next.js/tree/canary/examples/with-typescript)
-- [with-styled-components](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components)
+And start the application with this command line:
+
+```bash
+
+$ npm start
+```
+
+Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.

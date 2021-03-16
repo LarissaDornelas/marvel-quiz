@@ -157,6 +157,18 @@
       "color": "#B1D457",
       "points": 100,
       "id": 5
+    },
+    {
+      "name": "Larissa",
+      "color": "#DCE7F7",
+      "points": 70,
+      "id": 6
+    },
+    {
+      "name": "larissa",
+      "color": "#FFD628",
+      "points": 40,
+      "id": 7
     }
   ]
 }
